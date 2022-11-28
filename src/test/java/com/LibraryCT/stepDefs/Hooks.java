@@ -1,8 +1,10 @@
 package com.LibraryCT.stepDefs;
 
+import com.LibraryCT.utilities.DB_Util;
 import com.LibraryCT.utilities.Driver;
 import com.LibraryCT.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,6 +26,19 @@ public class Hooks {
         }
 
         Driver.closeDriver();
+    }
+
+    @Before("@db")
+    public void setupDB(){
+        DB_Util.createConnection();
+        System.out.println("connection to database .....");
+
+    }
+
+    @After("@db")
+    public void destroyDB(){
+        DB_Util.destroy();
+        System.out.println("closing connection...");
     }
 
 
