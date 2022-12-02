@@ -45,8 +45,9 @@ public class US1_1_UserInformationTable_StepDef {
     }
     @Then("verify the below columns are listed in result")
     public void verify_the_below_columns_are_listed_in_result(io.cucumber.datatable.DataTable dataTable) {
-     List<String> expectedUserColumnNames=dataTable.asList();
-Assert.assertEquals(expectedUserColumnNames, actualUserColumnNames);
+      List<String> expectedUserColumnNames=dataTable.asList();
+      System.out.println(expectedUserColumnNames);
+      Assert.assertEquals(expectedUserIDCount, actualUserIDCount);
     }
 
 

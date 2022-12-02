@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features" ,
-        glue = "com/LibraryCT/step_Defs" ,
-        dryRun = true,
+        glue = "com/LibraryCT/stepDefs" ,
+        dryRun = false,
         tags = "@TS14-206"
 )
 public class CukesRunner {
