@@ -1,4 +1,4 @@
-  @TS14-206
+  @TS14-206 @db
 #  US1: Verify that user information is stored in mySQL DB correctly in Users Table- DB1
 Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table.
 
@@ -9,12 +9,9 @@ Feature: As a data consumer, I want the user information are stored in mySql DB 
     When Execute query to get user IDs
     Then verify all users have unique ID
 
-  Scenario Outline: verify users table columns
+  Scenario: verify users table columns
     When Execute query to get all user table columns
-    Then verify the below <"columns"> are listed in result
-
-    Examples:
-      | "columns"     |
+    Then verify the below columns are listed in result
       | id            |
       | full_name     |
       | email         |
