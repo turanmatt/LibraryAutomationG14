@@ -497,6 +497,19 @@ public class BrowserUtils {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+    public static List<String> getAllSelectOptions(WebElement element){
+
+        Select select=new Select(element);
+
+        return getElementsText(select.getOptions());
+    }
+
+    public static void selectByVisibleText(WebElement element, String option){
+
+        Select select = new Select(element);
+        select.selectByVisibleText(option);
+    }
+
 
 }
 
